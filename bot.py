@@ -14,7 +14,7 @@ def run_flask():
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8000)))
 
 # --- SHARK LIQUIDITY BOT TOKEN ---
-BOT_TOKEN = "7826833790:AAH2b2Nd7r-gd8Ntqh-V3LVRBwDqFXVZsbU"
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
 bot = telebot.TeleBot(BOT_TOKEN)
 
 @bot.message_handler(func=lambda message: "vs" in message.text.lower())
