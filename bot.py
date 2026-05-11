@@ -13,7 +13,8 @@ def home(): return "Universal Shark Bot % Breakdown is Live!"
 def run_flask():
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8000)))
 
-# --- SHARK LIQUIDITY BOT TOKEN ---
+# --- SHARK LIQUIDITY BOT TOKEN (SECURE VERSION) ---
+# Ito ang magbabasa sa nilagay mo sa Render Dashboard
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 bot = telebot.TeleBot(BOT_TOKEN)
 
@@ -25,8 +26,6 @@ def handle_universal(message):
         t1 = teams[0].strip().upper()
         t2 = teams[1].strip().upper()
 
-        # --- PERCENTAGE LOGIC ---
-        # Public tickets are usually high, but Sharp handle (money) is concentrated.
         pub_tickets = random.randint(68, 82)
         sharp_handle = random.randint(55, 75)
 
